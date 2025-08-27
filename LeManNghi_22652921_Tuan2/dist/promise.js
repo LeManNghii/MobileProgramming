@@ -8,3 +8,13 @@ const promise1 = new Promise((resolve, reject) => {
 promise1.then(value => {
     console.log(value);
 });
+// 2. Write a function that returns a Promise resolving with the number 10 after 1 second.
+function getNumberAfterOneSecond() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(10);
+        }, 1000);
+    });
+}
+const promise2 = getNumberAfterOneSecond();
+promise2.then((value) => console.log(value));
