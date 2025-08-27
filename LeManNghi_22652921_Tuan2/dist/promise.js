@@ -18,3 +18,12 @@ function getNumberAfterOneSecond() {
 }
 const promise2 = getNumberAfterOneSecond();
 promise2.then((value) => console.log(value));
+// 3. Write a function that rejects a Promise with the error "Something went wrong" after 1 second.
+function getErrorAfterOneSecond() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject("Something went wrong");
+        }, 1000);
+    });
+}
+getErrorAfterOneSecond().catch((error) => console.error(error));
